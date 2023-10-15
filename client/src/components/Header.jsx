@@ -8,7 +8,6 @@ const Header = () => {
         <h1 className="logo">
           <a href="/">Smart Invest</a>
         </h1>
-
         <nav id="navbar" className="navbar">
           <ul>
             <li>
