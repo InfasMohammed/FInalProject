@@ -542,6 +542,20 @@ h6 {
   }
 }
 
+/* Signup singin section */
+.signup{
+  font-size:1.3rem;
+  decoration:none;
+  border:none;
+  background-color:transparent;
+  padding:.2rem;
+  color:#ffc107;
+}
+.signup:hover{
+  background-color:#ffc107;
+  color:rgb(86 58 250 / 90%);
+}
+
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
