@@ -5,6 +5,7 @@ import Signup from "./screen/Signup";
 import Login from "./screen/Login";
 import About from "./screen/About";
 import Contact from "./screen/Contact";
+import Services from "./screen/Services";
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/services" element={<Services/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        {/* <Route path='/dashboard' element={<Dashboard/>}/> */}
       </Routes>
     </BrowserRouter>
   );
