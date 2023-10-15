@@ -22,7 +22,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a className="nav-link scrollto" href="#services">
+            <a className="nav-link scrollto" href="/services">
               Services
             </a>
           </li>
