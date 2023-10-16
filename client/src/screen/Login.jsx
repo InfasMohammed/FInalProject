@@ -28,8 +28,8 @@ const Login = () => {
     <div>
       <Header />
       <section id="footer">
-      <div className="d-flex justify-content-center align-items-center vh-100">
-        <div className="bg-warning-emphasis bg-gradient p-3 rounded w-25">
+        <div className="d-flex justify-content-center align-items-center vh-100">
+          <div className="bg-warning-emphasis bg-gradient p-3 rounded sigup_section">
             <h2 className="text-center">Login</h2>
             {/* <form onSubmit={handleSubmit}> */}
             <form>
