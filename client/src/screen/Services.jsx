@@ -25,6 +25,12 @@ const Services = () => {
                     eligendi soluta est veniam sequi nemo, quas delectus eveniet
                     ducimus rem animi. Natus non earum deleniti aliquam
                   </p>
+                  <button
+                    type="submit"
+                    className="signup shadow-lg w-50 rounded-5 text-center bg-secondary"
+                  >
+                    Invest
+                  </button>
                 </div>
               </div>
               {/* card ends here */}
@@ -42,6 +48,12 @@ const Services = () => {
                     eligendi soluta est veniam sequi nemo, quas delectus eveniet
                     ducimus rem animi. Natus non earum deleniti aliquam
                   </p>
+                  <button
+                    type="submit"
+                    className="signup shadow-lg w-50 rounded-5 text-center bg-secondary"
+                  >
+                    Invest
+                  </button>
                 </div>
               </div>
               {/* card ends here */}
@@ -59,6 +71,12 @@ const Services = () => {
                     eligendi soluta est veniam sequi nemo, quas delectus eveniet
                     ducimus rem animi. Natus non earum deleniti aliquam
                   </p>
+                  <button
+                    type="submit"
+                    className="signup shadow-lg w-50 rounded-5 text-center bg-secondary"
+                  >
+                    Invest
+                  </button>
                 </div>
               </div>
               {/* card ends here */}
@@ -76,6 +94,12 @@ const Services = () => {
                     eligendi soluta est veniam sequi nemo, quas delectus eveniet
                     ducimus rem animi. Natus non earum deleniti aliquam
                   </p>
+                  <button
+                    type="submit"
+                    className="signup shadow-lg w-50 rounded-5 text-center bg-secondary"
+                  >
+                    Invest
+                  </button>
                 </div>
               </div>
               {/* card ends here */}
