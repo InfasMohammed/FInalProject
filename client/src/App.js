@@ -7,6 +7,7 @@ import About from "./screen/About";
 import Contact from "./screen/Contact";
 import Services from "./screen/Services";
 import InvestDetail from "./screen/InvestDetails";
+import React from "react";
 
 function App() {
   return (

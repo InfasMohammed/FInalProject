@@ -1,12 +1,14 @@
 import React from "react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Header from "../components/Header";
+// import Footer from "../components/Footer";
+import PaymentInfo from "./PaymentInfo";
+// import { Link } from "react-router-dom";
 
 
 const Services = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <section className="services">
         <div className="container-fluid">
           <h1 className="text-center mt-5 display-3 fw-bold text-white">
@@ -109,7 +111,9 @@ const Services = () => {
           </div>
         </div>
       </section>
-      <Footer />
+      {/* <Footer /> */}
+
+      <PaymentInfo/>
     </>
   );
 };
