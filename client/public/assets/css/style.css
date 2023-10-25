@@ -443,6 +443,16 @@ h6 {
     url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
 }
+.container-fluid, .hero-h1 , .hero-img {
+  opacity: 1 !important;
+}
+.hero-h2 {
+  opacity: 1;
+}
+.btn-get-started {
+  cursor:pointer;
+  opacity: 1;
+}
 
 #hero .container,
 #hero .container-fluid {
