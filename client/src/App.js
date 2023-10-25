@@ -8,6 +8,7 @@ import Contact from "./screen/Contact";
 import Services from "./screen/Services";
 import InvestDetail from "./screen/InvestDetails";
 import React from "react";
+import PaymentInfo from "./screen/PaymentInfo";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/invest" element={<InvestDetail/>} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/payment" element={<PaymentInfo/>}/>
       </Routes>
     </BrowserRouter>
   );

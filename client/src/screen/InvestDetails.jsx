@@ -7,7 +7,7 @@ const InvestDetail = () => {
   return (
     <>
       <Header />
-      <section>
+      <section id="invest">
         <div className="container">
           <div className="invest_details d-flex row mt-4">
             <div className="col-md-8 mt-5">

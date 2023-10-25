@@ -1,18 +1,17 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 
 const Contact = () => {
   return (
     <div>
-      {/* Header */}
-      <Header />
-      {/* End Header */}
-      <section id="footer">
+      <section id="contact_section">
+        <h1 className="text-center display-3 fw-bold theme-text">
+          Contact <span className="text-black">Us</span>
+        </h1>
+        <hr className="mx-auto w-25" />
         <div className="contact container bg-warning-emphasis bg-gradient p-3 rounded">
-          <div className="d-flex  gap-3">
+          <div id="contact" className="d-flex gap-3 p-md-4 p-2 rounded-5">
             <div className="col-12 col-md-6">
-          <h2 className="text-center mt-5 mb-5">Reach Me...!</h2>
+              <h2 className="text-center mt-5 mb-5">Reach Me...!</h2>
               <div className="mb-3">
                 <label for="exampleFormControlInput1" className="form-label">
                   Enter the Name
@@ -57,21 +56,20 @@ const Contact = () => {
                   placeholder="Your Message...."
                 ></textarea>
               </div>
-              
+
               <button
-                  type="submit"
-                  className="signup shadow-lg w-50 rounded-5 text-center p-3"
-                >
-                  Send Message<i class="bi bi-arrow-up-right p-3"></i>
-                </button>
-            
+                type="submit"
+                className="signup shadow-lg w-50 rounded-5 text-center p-3"
+              >
+                Send Message<i class="bi bi-arrow-up-right p-3"></i>
+              </button>
             </div>
-            <div className="col-12 col-md-6 contact_side"></div>
+            <div className="col-12 col-md-6">
+              <img src="assets/img/contact.svg" alt="contact" />
+            </div>
           </div>
         </div>
       </section>
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };
