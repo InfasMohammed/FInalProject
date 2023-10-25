@@ -6,19 +6,37 @@ import Footer from "../components/Footer";
 import React from "react";
 
 function Signup() {
-  const [name, setName] = useState();
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
   const navigate = useNavigate();
 
-  // const handleSubmit = (e) => {
-  //     e.preventDefault()
-  //     axios.post('http://localhost:3001/register', {name,email,password})
-  //     .then(res =>{
-  //         alert("Created")
-  //         navigate('/login')
-  //     }).catch(err => console.log(err))
-  // }
+  // const [name, setName] = useState();
+  // const [email, setEmail] = useState();
+  // const [password, setPassword] = useState();
+
+  const [formData, setFormData] = useState({
+    name:'',
+    email:'',
+    password:''
+
+  })
+  const [loginError, setLoginError] = useState(null);
+
+  const handleInputChange = (e) => {
+    setFormData({...formData, [e.target.name]:e.target.value});
+  }
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      if (!formData.name || !formData.email || !formData.password) {
+        // Check for empty fields and display an error message
+        setLoginError("Both name, email and password fields are required.");
+        return;
+      }
+      axios.post('http://localhost:3001/register',formData)
+      .then(res =>{
+          alert("Successfuly Created...!")
+          navigate('/login')
+      }).catch(err => console.log(err))
+  }
 
   return (
     <>
@@ -27,8 +45,10 @@ function Signup() {
         <div className="d-flex justify-content-center align-items-center vh-100">
           <div className="bg-warning-emphasis bg-gradient p-3 rounded sigup_section">
             <h2 className="text-center">Signup</h2>
-            {/* <form onSubmit={handleSubmit}> */}
-            <form>
+            <form onSubmit={handleSubmit}>
+              {loginError && (
+                <div className="alert alert-danger">{loginError}</div>
+              )}
               <div className="mb-3">
                 <label htmlFor="email">
                   <strong>Name</strong>
@@ -37,8 +57,8 @@ function Signup() {
                   type="text"
                   placeholder="Enter Name"
                   autoComplete="off"
-                  name="email"
-                  // onChange={(e) => setName(e.target.value)}
+                  name="name"
+                  onChange={handleInputChange}
                   className="form-control rounded-0.5 text-body-secondary"
                 />
               </div>
@@ -51,7 +71,7 @@ function Signup() {
                   placeholder="Enter Email"
                   autoComplete="off"
                   name="email"
-                  // onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleInputChange}
                   className="form-control rounded-0.5 text-body-secondary"
                 />
               </div>
@@ -64,7 +84,7 @@ function Signup() {
                   placeholder="Enter Password"
                   autoComplete="off"
                   name="password"
-                  // onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleInputChange}
                   className="form-control rounded-0.5 text-body-secondary"
                 />
               </div>

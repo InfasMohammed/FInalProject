@@ -10,7 +10,7 @@ const Services = () => {
     <>
       {/* <Header /> */}
       <section className="services">
-        <div className="container-fluid">
+        <div className="container">
           <h1 className="text-center display-3 fw-bold theme-text">
             Our <span className="text-black">Services</span>
           </h1>

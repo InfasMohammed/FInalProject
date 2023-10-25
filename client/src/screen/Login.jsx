@@ -5,24 +5,48 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const [loginError, setLoginError] = useState(null);
+
   const navigate = useNavigate();
 
-  //   axios.defaults.withCredentials = true;
-  //   const handleSubmit = (e) => {
-  //     e.preventDefault()
-  //     axios.post('http://localhost:3001/login', {email,password})
-  //     .then(res =>{
-  //       if(res.data.Status === "Success" ) {
-  //         if(res.data.role === "admin") {
-  //           navigate('/')
-  //         }else{
-  //           navigate('/')
-  //         }
-  //       }
-  //     }).catch(err => console.log(err))
-  // }
+  const handleInputChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  axios.defaults.withCredentials = true;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.email || !formData.password) {
+      // Check for empty fields and display an error message
+      setLoginError("Both email and password fields are required.");
+      return;
+    }
+
+    axios
+      .post("http://localhost:3001/login", formData)
+      .then((res) => {
+        if (res.data.Status === "Success") {
+          if (res.data.role === "admin") {
+            navigate("/dashboard");
+          } else {
+            navigate("/invest");
+          }
+        } else {
+          // Data not found in the database
+          setLoginError("This username and password do not exist in the Database");
+        }
+      })
+      .catch((err) => {
+        console.log("An error occurred", err);
+        // Handle other errors here
+      });
+  };
 
   return (
     <div>
@@ -31,8 +55,10 @@ const Login = () => {
         <div className="d-flex justify-content-center align-items-center vh-100">
           <div className="bg-warning-emphasis bg-gradient p-3 rounded sigup_section">
             <h2 className="text-center">Login</h2>
-            {/* <form onSubmit={handleSubmit}> */}
-            <form>
+            <form onSubmit={handleSubmit}>
+              {loginError && (
+                <div className="alert alert-danger">{loginError}</div>
+              )}
               <div className="mb-3">
                 <label htmlFor="email">
                   <strong>Email</strong>
@@ -42,7 +68,7 @@ const Login = () => {
                   placeholder="Enter Email"
                   autoComplete="off"
                   name="email"
-                  // onChange={(e) => setEmail(e.target.value)}
+                  onChange={handleInputChange}
                   className="form-control rounded-0.5 text-body-secondary"
                 />
               </div>
@@ -55,7 +81,7 @@ const Login = () => {
                   placeholder="Enter Password"
                   autoComplete="off"
                   name="password"
-                  // onChange={(e) => setPassword(e.target.value)}
+                  onChange={handleInputChange}
                   className="form-control rounded-0.5 text-body-secondary"
                 />
               </div>

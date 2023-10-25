@@ -5,11 +5,11 @@ const Footer = () => {
     <>
       <div className="container-fluid pt-4" id="footer">
         {/* <div className="d-flex"> */}
-        <div className="row">
-          <div className="col-md-4">
+        <div className="row row-gap-3">
+          <div className="col-sm-6 col-md-4">
             <img src="assets/img/raiz-motors-logo.png" alt="logo" />
           </div>
-          <div className="col-md-4">
+          <div className="col-sm-6 col-md-4">
             <h6 className="des">
               <strong>Phone:</strong> +94 672260274
             </h6>
@@ -20,7 +20,7 @@ const Footer = () => {
             <h6 className="des">Sammanthurai</h6>
             <h6 className="des">Sri Lanka</h6>
           </div>
-          <div className="col-md-4">
+          <div className="col-sm-6 col-md-4">
             <h6>Get in Touch</h6>
             <div className="d-flex">
               <div className="row">
